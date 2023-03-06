@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="main.css">
+      <!----
+     <script type="text/javascript" src="index.js"></script>
+     -->
+      <title>My Todo List</title>
+    </head>
+    <body>
+        <header>
+            <h1>My Todo List</h1>
+        </header>
+        <ul>
+            <li>Review the slides of DOM</li>
+            <li>Complete the assignments</li>
+            <li>Complete the group projects</li>
+            <li>Read the resources assigned</li>
+            <li>Extra Practices</li>
+        </ul>
+
+        <input type="text" id="newItem" value="New todo item">
+        <button id= "add-item-btn" class="add-btn">Add</button>
+
+        <script>
+        
+        let myFunc = function (event) {
+           
+            // console.log("Add item button clicked");
+            if(typeof document !== "undefined")
+            {
+                //alert('clicked');
+
+                let x = document.getElementById("newItem");
+                let defaultVal = x.defaultValue;
+                //alert( defaultVal);
+                let currentVal = x.value;
+                //alert( currentVal);
+  
+                let newLI = document.createElement('li');
+                newLI.innerHTML = currentVal;
+                //alert(newLI.innerHTML);
+
+                let ulList = document.querySelector('ul');
+                ulList.appendChild(newLI); //append to ul list as the last item
+            }
+            else
+            {
+                alert('document type is undefinded!');
+            }
+            
+        }
+
+        document.getElementById("add-item-btn").addEventListener("click", myFunc);
+        
+        </script>
+
+
+
+        <button id = "remove-item-btn"class="remove-btn">Remove</button>
+     
+        
+        <!-- <script type="module" src="./index.js"></script> -->
+    </body>
+</html>
