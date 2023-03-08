@@ -13,9 +13,7 @@
         </style>
 
       <link rel="stylesheet" href="main.css">
-      <!----
-     <script type="text/javascript" src="index.js"></script>
-     -->
+      
       <title>My To-do List</title>
     </head>
     <body> 
@@ -44,110 +42,81 @@
            </row>
         </div>
 
-<script>  
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-console.log(list);
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-
-let addFunc = function (event) {
-    
-    if(typeof document !== "undefined")
-    {
-        alert('Add button is clicked');
-
-        let x = document.getElementById("newItem");
-        let defaultVal = x.defaultValue;
-        alert( defaultVal);
-        let currentVal = x.value;
-        alert( currentVal);
-        
-        let newLI = document.createElement('li');
-        //newLI.innerHTML = currentVal;
-        var txt = document.createTextNode(currentVal);
-        newLI.appendChild(txt);
-        
-
-        //alert(newLI.innerHTML);
-        /* let ulList = document.querySelector('ul');
-        ulList.appendChild(newLI); //append to ul list as the last item */
-        if (currentVal=== '') {
-            alert("Please enter a task!");
-        } 
-        else 
-        {
-            document.getElementById("tasksUL").appendChild(newLI);
-        }
-        document.getElementById("newItem").value = "";
-
+        <script>  
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span.className = "close";
         span.appendChild(txt);
-        newLI.appendChild(span);
+        myNodelist[i].appendChild(span);
+        }
 
+        // Click on a close (x) button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
         for (i = 0; i < close.length; i++) {
-            /* close[i].addEventListener("click", closeFunc);
-            closeFunc(this); */
-            close[i].onclick = function() {
-            alter('onclick called');
+        close[i].onclick = function() {
             var div = this.parentElement;
             div.style.display = "none";
-            }
         }
-    }
-    else
-    {
-        alert('document type is undefinded!');
-    }
-    
-}
-        /*
+        }
+
+        // Add a "checked" mark when clicking on a list item
+        var list = document.querySelector('ul');
+        console.log(list);
+        list.addEventListener('click', function(ev) {
+        // Here I have to use the "LI" not "li" to make it work
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+        }, false);
+
+        //This function will create a new item and add to the to-do list
+        //when the "Add" button is clicked
         let addFunc = function (event) {
-           
+            
             if(typeof document !== "undefined")
             {
-                alert('Add button is clicked');
+                //alert('Add button is clicked');
 
                 let x = document.getElementById("newItem");
                 let defaultVal = x.defaultValue;
-                //alert( defaultVal);
+                alert( defaultVal);
                 let currentVal = x.value;
-                //alert( currentVal);
+                alert( currentVal);
                 
                 let newLI = document.createElement('li');
-                newLI.innerHTML = currentVal;
-                newLI.addEventListener("click", removeFunc);
-        
+                //newLI.innerHTML = currentVal;
+                var txt = document.createTextNode(currentVal);
+                newLI.appendChild(txt);
+                
                 //alert(newLI.innerHTML);
-                let ulList = document.querySelector('ul');
-                ulList.appendChild(newLI); //append to ul list as the last item
+                
+                if (currentVal=== '') {
+                    alert("Please enter a task!");
+                } 
+                else 
+                {
+                    document.getElementById("tasksUL").appendChild(newLI);
+                }
+                document.getElementById("newItem").value = "";
+
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                newLI.appendChild(span);
+
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                    alter('onclick called');
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                    }
+                }
             }
             else
             {
@@ -155,35 +124,8 @@ let addFunc = function (event) {
             }
             
         }
-        */
-
-        /* let removeFunc = function (event) {
-           
-           if(typeof document !== "undefined")
-           {
-               alert('li item is clicked');
-               let x = document.querySelector('a.li.select');
-               alert(x.innerHTML);
-               x.remove();            
-           }
-           else
-           {
-               alert('document type is undefinded!');
-           }
-           
-       } */
-
-      /*  let closeFunc = function (obj) 
-       {
-           alert ('closeFunc()');
-           alert (obj.className);
-           var div = obj.parentElement;
-           alert (div.className);
-           div.style.display = "none";  
-       }
- */
+            
         document.getElementById("add-item-btn").addEventListener("click", addFunc);
-        
         </script>
 
     <!-- <script type="module" src="./index.js"></script> -->
