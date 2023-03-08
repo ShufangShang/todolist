@@ -1,18 +1,5 @@
 
-/* let addItemFunction = function () {
-
-    console.log("Add item button clicked");
-
-}
-
-
-document.getElementById("add-item-btn").
-addEventListener
-("click", addItemFunction);
- */
-
-<script>  
-    // Create a "close" button and append it to each list item
+    /* Create a "close" button and append it to each list item */
     var myNodelist = document.getElementsByTagName("LI");
     var i;
     for (i = 0; i < myNodelist.length; i++) {
@@ -95,5 +82,5 @@ addEventListener
     }
         
     document.getElementById("add-item-btn").addEventListener("click", addFunc);
-</script>
+
 

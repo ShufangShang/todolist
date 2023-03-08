@@ -4,8 +4,6 @@ html {
   color: #333; 
 }
 
-
-
 body{
     align-items: center;
     max-width: 500px; 
@@ -15,14 +13,25 @@ body{
 
 
 header {
-    text-align: center;
-    background-color: aqua;
-    padding: 0.2em;
+    text-align: center;   
     margin-top: 5em;
+    max-width: 500px;
+    margin-left:0;
+    padding-left:0; 
     
 }
 
-div, article { padding: 10px; margin: 5px; border: 1px solid #dedede; }
+
+div, article { 
+  padding: 10px; 
+  margin: 5px; 
+  border: 15px 
+  solid #dedede; 
+}
+
+#div-head {
+  background-color:darkkhaki;
+}
 
  /* Include the padding and border in an element's total width and height  */
   * {
@@ -60,7 +69,7 @@ div, article { padding: 10px; margin: 5px; border: 1px solid #dedede; }
   }
 
   #input-area {
-    background-color:aqua;
+    background-color:darkkhaki;
   }
 
   /* Style the close button */
@@ -79,7 +88,7 @@ div, article { padding: 10px; margin: 5px; border: 1px solid #dedede; }
 /* When clicked on, add a background color and strike out text  */
 ul li.checked {
   background: #888;
-  color:lightskyblue;
+  color:darkkhaki;
   text-decoration: line-through;
 }
 
