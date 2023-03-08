@@ -10,14 +10,32 @@
     myNodelist[i].appendChild(span);
     }
 
+    let logCurrentDateTime = function()
+    {
+        let today = new Date();
+        let d = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        let t = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let dt = d+' '+t;   
+        console.log(dt);
+    }
+
+
     // Click on a close (x) button to hide the current list item
     var close = document.getElementsByClassName("close");
     var i;
-    for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
-    }
+    for (i = 0; i < close.length; i++) 
+    {
+        close[i].onclick = function() 
+        {
+            logCurrentDateTime();
+            var pt = this.parentElement;
+           
+            //Delay for 1 second here
+            setTimeout(function(){
+                logCurrentDateTime();              
+                pt.style.display = "none";
+            },1000)
+      }
     }
 
     // Add a "checked" mark when clicking on a list item
