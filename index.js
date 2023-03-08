@@ -25,17 +25,21 @@
     var i;
     for (i = 0; i < close.length; i++) 
     {
-        close[i].onclick = function() 
+        close[i].onclick = function(ev) 
         {
-            logCurrentDateTime();
+            //logCurrentDateTime();
             var pt = this.parentElement;
+           
+            //Cross out the line before deleting it
+            pt.style.textDecorationColor = "darkkhaki";  
+            pt.style.textDecoration = "line-through";
            
             //Delay for 1 second here
             setTimeout(function(){
-                logCurrentDateTime();              
+                //logCurrentDateTime();              
                 pt.style.display = "none";
             },1000)
-      }
+      };
     }
 
     // Add a "checked" mark when clicking on a list item
@@ -44,7 +48,7 @@
     list.addEventListener('click', function(ev) {
     // Here I have to use the "LI" not "li" to make it work
     if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
+        ev.target.classList.toggle('checked')
     }
     }, false);
 
