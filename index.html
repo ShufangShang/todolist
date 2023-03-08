@@ -16,7 +16,7 @@
       <!----
      <script type="text/javascript" src="index.js"></script>
      -->
-      <title>My Todo List</title>
+      <title>My To-do List</title>
     </head>
     <body> 
         <header>
@@ -44,47 +44,8 @@
            </row>
         </div>
 
-
-        <!-- <div class="container justify-content-center"> -->
-        
-          <!--   
-            <a href="#" onclick="removeFunc()"><li>Review the slides of DOM</li></a>
-            <a href="#" onclick="removeFunc()"><li>Complete the assignments</li></a>
-            <a href="#" onclick="removeFunc()"><li>Complete the group projects</li></a>
-            <a href="#" onclick="removeFunc()"><li>Read the resources assigned</li></a>
-            <a href="#" onclick="removeFunc()"><li>Extra Practices</li></a> -->
-            
-           <!--  <ul id="todoUL">
-                <li>Review the slides of DOM</li>
-                <li class="checked">Complete the assignments</li>
-                <li>Complete the group projects</li>
-                <li>Read the resources assigned</li>
-                <li>Read a book</li>
-                <li>Extra Practices</li>
-              </ul> -->
-              
-            <!-- 
-            <li onclick="removeFunc">Review the slides of DOM</li>
-            <li onclick="removeFunc">Complete the assignments</li>
-            <li onclick="removeFunc">Complete the group projects</li>
-            <li onclick="removeFunc">Read the resources assigned</li>
-            <li onclick="removeFunc">Extra Practices</li> -->
-       
-    
-       <!--  
-        <div id="input-area" class=" container justify-content-right">
-            <input type="text" id="newItem" value="New todo item">
-            <button id= "add-item-btn" class="add-btn">Add</button>
-        </div> -->
-        <!--
-        <button id = "remove-item-btn"class="remove-btn">Remove</button>
-        -->
-        
-
-        <script>
-       
-
-        // Create a "close" button and append it to each list item
+<script>  
+// Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -105,68 +66,68 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
+console.log(list);
 list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'li') {
+  if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
 }, false);
 
 
-        let addFunc = function (event) {
-           
-           if(typeof document !== "undefined")
-           {
-               alert('Add button is clicked');
+let addFunc = function (event) {
+    
+    if(typeof document !== "undefined")
+    {
+        alert('Add button is clicked');
 
-               let x = document.getElementById("newItem");
-               let defaultVal = x.defaultValue;
-               alert( defaultVal);
-               let currentVal = x.value;
-               alert( currentVal);
-               
-               let newLI = document.createElement('li');
-               //newLI.innerHTML = currentVal;
-               var txt = document.createTextNode(currentVal);
-               newLI.appendChild(txt);
-               
-       
-               //alert(newLI.innerHTML);
-               /* let ulList = document.querySelector('ul');
-               ulList.appendChild(newLI); //append to ul list as the last item */
-                if (currentVal=== '') {
-                    alert("Please enter a task!");
-                } 
-                else 
-                {
-                    document.getElementById("tasksUL").appendChild(newLI);
-                }
-                document.getElementById("newItem").value = "";
+        let x = document.getElementById("newItem");
+        let defaultVal = x.defaultValue;
+        alert( defaultVal);
+        let currentVal = x.value;
+        alert( currentVal);
+        
+        let newLI = document.createElement('li');
+        //newLI.innerHTML = currentVal;
+        var txt = document.createTextNode(currentVal);
+        newLI.appendChild(txt);
+        
 
-                var span = document.createElement("SPAN");
-                var txt = document.createTextNode("\u00D7");
-                span.className = "close";
-                span.appendChild(txt);
-                newLI.appendChild(span);
+        //alert(newLI.innerHTML);
+        /* let ulList = document.querySelector('ul');
+        ulList.appendChild(newLI); //append to ul list as the last item */
+        if (currentVal=== '') {
+            alert("Please enter a task!");
+        } 
+        else 
+        {
+            document.getElementById("tasksUL").appendChild(newLI);
+        }
+        document.getElementById("newItem").value = "";
 
-                for (i = 0; i < close.length; i++) {
-                    /* close[i].addEventListener("click", closeFunc);
-                    closeFunc(this); */
-                    close[i].onclick = function() {
-                    alter('onclick called');
-                    var div = this.parentElement;
-                    div.style.display = "none";
-                    }
-                }
-           }
-           else
-           {
-               alert('document type is undefinded!');
-           }
-           
-       }
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        newLI.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            /* close[i].addEventListener("click", closeFunc);
+            closeFunc(this); */
+            close[i].onclick = function() {
+            alter('onclick called');
+            var div = this.parentElement;
+            div.style.display = "none";
+            }
+        }
+    }
+    else
+    {
+        alert('document type is undefinded!');
+    }
+    
+}
         /*
         let addFunc = function (event) {
            
@@ -196,7 +157,7 @@ list.addEventListener('click', function(ev) {
         }
         */
 
-        let removeFunc = function (event) {
+        /* let removeFunc = function (event) {
            
            if(typeof document !== "undefined")
            {
@@ -210,9 +171,9 @@ list.addEventListener('click', function(ev) {
                alert('document type is undefinded!');
            }
            
-       }
+       } */
 
-       let closeFunc = function (obj) 
+      /*  let closeFunc = function (obj) 
        {
            alert ('closeFunc()');
            alert (obj.className);
@@ -220,7 +181,7 @@ list.addEventListener('click', function(ev) {
            alert (div.className);
            div.style.display = "none";  
        }
-
+ */
         document.getElementById("add-item-btn").addEventListener("click", addFunc);
         
         </script>
